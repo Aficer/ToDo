@@ -37,11 +37,13 @@ struct AddView: View {
                         .cornerRadius(10)
                     
                 })
+                  
             }
             .padding(14)
         }
         .navigationTitle("Добавить заметку")
         .alert(isPresented: $showAlert, content: getAlert)
+        .accessibility(identifier: "Добавить заметку")
     }
     func saveButtonPressed () {
         if textIsAppropriate() {
@@ -57,8 +59,10 @@ struct AddView: View {
             showAlert.toggle()
             return false
         }
+        
         return true
     }
+    
     func getAlert() -> Alert {
         return Alert(title: Text(alertTitle))
     }

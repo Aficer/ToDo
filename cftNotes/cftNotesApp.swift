@@ -17,10 +17,11 @@ struct cftNotesApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ListView()
+               ListView()
             }
-            .navigationViewStyle(StackNavigationViewStyle())
-            .environmentObject(listViewModel)
+           .navigationViewStyle(StackNavigationViewStyle())
+          .environmentObject(listViewModel)
+        
         }
     }
 }
