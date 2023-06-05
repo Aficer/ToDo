@@ -38,18 +38,18 @@ class cftNotesUITests: XCTestCase {
         app.navigationBars["ToDo 👩‍💻"].buttons["Edit"].tap()
         let doneButton = app.buttons["Done"]
         XCTAssertTrue(doneButton.exists)
-        app.navigationBars["ToDo 👩‍💻"].buttons["Done"].tap()
+        doneButton.tap()
         //Ищем и проверяем кнопку Добавить
         let addButton = app.buttons["Добавить"]
         XCTAssertTrue(addButton.exists)
         //Переходим на AddView и проверяем наличие кнопки сохранить
-        app.navigationBars["ToDo 👩‍💻"].buttons["Добавить"].tap()
+        addButton.tap()
         let button1 = app.buttons["СОХРАНИТЬ"]
         XCTAssertTrue(button1.exists)
         //Находим textField проверяем его и нажимаем сохранить - ожидаем увидеть alert
         let textField1 = app.scrollViews["Добавить заметку"].otherElements.textFields["Напиши что нибудь..."]
         XCTAssertTrue(textField1.exists)
-        app.buttons["СОХРАНИТЬ"].tap()
+        button1.tap()
         //Проверяем наличие alerta
         let alert = app.alerts["Нужно больше букв!"]
         XCTAssertTrue(alert.exists)
